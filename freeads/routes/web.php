@@ -11,6 +11,21 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    $index = new App\Http\Controllers\Auth\IndexController();
+    $index -> showIndex();
+});
+
+Route::get('/register', function () {
+    $index = new App\Http\Controllers\Auth\RegisterController();
+    $index -> showRegister();
+});
+
+Route::get('/login', function () {
+    $index = new App\Http\Controllers\Auth\LoginController();
+    $index -> showLogin();
 });
