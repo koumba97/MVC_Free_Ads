@@ -15,15 +15,12 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    $index = new App\Http\Controllers\Auth\IndexController();
-    $index -> showIndex();
-});
+//Route::get('/', 'AppController@index');
+Route::get('/', 'IndexController@showIndex');
+Route::get('/index', 'IndexController@showIndex');
 
-Route::get('/register', function () {
-    $index = new App\Http\Controllers\Auth\RegisterController();
-    $index -> showRegister();
-});
+Route::get('/register', 'Utilisateur@create');
+Route::get('/storeUser', 'Utilisateur@store');
 
 Route::get('/login', function () {
     $index = new App\Http\Controllers\Auth\LoginController();

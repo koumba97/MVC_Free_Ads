@@ -5,14 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="stylesheet" type="text/css"  href="{{ asset('css/style.css') }}">
         <title>Laravel</title>
     </head>
     
     <body>
       
         <h1>Register</h1>
-        
-        <form method="POST" action="userAdd" class="form_login">
+
+        <form action="{{url('storeUser')}}" method="POST">
+        {{ csrf_field() }}
             <h2>Inscription</h2>
             <p>nom : <input type="text" name="name"></p>
             <p>prenom : <input type="text" name="surname"></p>
