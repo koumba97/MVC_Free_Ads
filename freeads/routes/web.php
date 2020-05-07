@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,18 +13,33 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-//Route::get('/', 'AppController@index');
 Route::get('/', 'IndexController@showIndex');
-Route::get('/index', 'IndexController@showIndex');
 
-Route::get('/register', 'Utilisateur@create');
-Route::get('/storeUser', 'Utilisateur@store');
+Route::get('/registerUser', 'Utilisateur@create');
 
-Route::get('/login', function () {
-    $index = new App\Http\Controllers\Auth\LoginController();
-    $index -> showLogin();
+
+Route::resource('users', 'Utilisateur');
+
+Route::post('registerUser', function(){
+
+    $user = new App\users;
+    $user->name = request('name');
+    $user->surname = request('surname');
+    $user->pseudo = request('pseudo');
+    $user->email = request('email');
+    $user->password = sha1(request('password'));
+    $user->status = "OFF";
+    //$user->email_verified_at = "null";
+    //$user->subscrib_date = NOW();
+
+    $user->save();
 });
+
+Auth::routes(['verify' => true]);
+
+Route::get('protege', function () {
+    return 'affichage de la route protégé';
+})->middleware('verified');
+
+Route::get('/home', 'HomeController@index')->name('home');

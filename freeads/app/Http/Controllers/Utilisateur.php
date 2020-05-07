@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class Utilisateur extends Controller
 {
@@ -23,7 +24,7 @@ class Utilisateur extends Controller
      */
     public function create()
     {
-        return view('register');
+        return view('auth/register');
     }
 
     /**
@@ -34,10 +35,7 @@ class Utilisateur extends Controller
      */
     public function store()
     {
-        echo $_POST['name'];
-        echo $_POST['surname'];
-        echo $_POST['email'];
-        echo $_POST['password'];
+
     }
 
     /**
