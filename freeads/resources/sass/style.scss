@@ -1,0 +1,60 @@
+$grey: rgb(169, 169, 169);
+.profil{
+    display: flex;
+    justify-content: space-between;
+
+    a{
+        text-decoration: none;
+    }
+
+    .profil_info{
+        width: 60%;
+
+        .profil_picture{
+            height: 200px;
+            background-color: whitesmoke;
+            width: 200px;
+        }
+
+        .info{
+            padding-left: 20px;
+            padding-top: 40px;
+            font-size: 10px;
+            color:$grey;
+        }
+
+        .button{
+            height: max-content;
+            background-color: rgb(255, 209, 216);
+            color: white;
+            padding: 5px;
+            width: max-content;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .dernieres_annonces{
+            margin-top: 40px;
+            background-color: rgb(229, 239, 240);
+            height: 200px;
+        }
+    }
+
+    .profil_annonces{
+
+        border-radius: 5px;
+        height: 450px;
+        width: 35%;
+
+        h1{
+            font-size: 20px;
+        }
+
+        .mes_annonces{
+            background-color: rgb(250, 245, 237);
+            width: 100%;
+            height: 100%;
+
+        }
+    }
+}
