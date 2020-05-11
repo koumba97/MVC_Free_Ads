@@ -1,3 +1,0 @@
-<nav>
-freeads.
-</nav>

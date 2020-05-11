@@ -1,3 +1,166 @@
+.home {
+  padding: 20px;
+}
+
+.home .carrousel {
+  height: 450px;
+  width: 80%;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/images/still_life.png?c593b2f8a0cf819abce37f2df1839fba);
+  background-position: 5px;
+}
+
+.home .add_annonce {
+  height: 35px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #ffe8f1;
+  position: relative;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  padding-top: 0px;
+  top: 90px;
+  cursor: pointer;
+}
+
+.home .annonces {
+  margin-top: 100px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home .annonces a {
+  text-decoration: none;
+  color: black;
+}
+
+.home .annonces .annonce {
+  background-color: #e7f8ff;
+  height: 300px;
+  width: 230px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.home .annonces .annonce .photo {
+  background-color: white;
+  width: 180px;
+  height: 180px;
+  margin: auto;
+  background-size: cover;
+}
+
+.home .annonces .annonce p {
+  margin: 0px;
+}
+
+.home .annonces .annonce .nom {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.home .annonces .annonce .prix {
+  float: right;
+}
+
+.fond_add {
+  display: none;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.568);
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 140%;
+  overflow: auto;
+}
+
+.popup_add {
+  display: none;
+  z-index: 5;
+  background-color: white;
+  position: fixed;
+  left: 25%;
+  top: 15%;
+  width: 600px;
+  height: 440px;
+  overflow: unset;
+  box-shadow: 10px 10px 0px #3c6b8f;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.popup_add .title {
+  border: none;
+  border-bottom: solid 1px #d2d2d2;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.popup_add textarea {
+  background-color: #f4f4f4;
+  border: none;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.popup_add input[type=text] {
+  font-size: 40px;
+}
+
+.popup_add .top {
+  height: 50px;
+  border: none;
+  padding-right: 10px;
+}
+
+.popup_add .top .popin-dismiss {
+  font-size: 30px;
+  float: right;
+  cursor: pointer;
+}
+
+.popup_add .pictures {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.popup_add .pictures .picture {
+  height: 80px;
+  width: 80px;
+  background-color: #ebebeb;
+  color: white;
+  margin: auto;
+  margin-right: 20px;
+  align-self: center;
+  text-align: center;
+  font-size: 30px;
+}
+
+.popup_add .pictures .picture i {
+  position: relative;
+  top: 15px;
+}
+
+.popup_add .pictures p .price {
+  width: 50px;
+  float: right;
+}
+
+.popup_add input[type=submit] {
+  height: 30px;
+  align-self: flex-end;
+  border: none;
+  color: white;
+  background-color: #97a484;
+}
+
 .profil {
   display: flex;
   justify-content: space-between;
@@ -13,8 +176,9 @@
 
 .profil .profil_info .profil_picture {
   height: 200px;
-  background-color: whitesmoke;
   width: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .profil .profil_info .info {
@@ -58,5 +222,76 @@
   background-color: #faf5ed;
   width: 100%;
   height: 100%;
+}
+
+.profil {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profil .form_edit {
+  background-color: white;
+  padding: 10px;
+  margin: auto;
+  width: 300px;
+  box-shadow: 2px 2px 1px #cbcbcb;
+}
+
+.profil .form_edit .div_picture_content {
+  background: #dedede;
+}
+
+.profil .form_edit .div_picture_content .profil_picture_edit {
+  height: 200px;
+  background-color: whitesmoke;
+  width: 200px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profil .form_edit input {
+  float: right;
+}
+
+.annonce {
+  display: flex;
+}
+
+.annonce .gallery {
+  display: flex;
+  height: 420px;
+  margin-right: 20px;
+}
+
+.annonce .gallery .small_pictures {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.annonce .gallery .small_pictures .small_picture {
+  border: solid;
+  height: 100px;
+  width: 100px;
+}
+
+.annonce .gallery .show {
+  width: 420px;
+  height: 420px;
+  border: solid;
+}
+
+.annonce .info {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  align-self: flex-end;
+}
+
+.annonce .info .price {
+  float: right;
+  margin-bottom: 20px;
 }
 

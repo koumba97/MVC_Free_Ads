@@ -6,8 +6,9 @@
         <div class="profil_info">
             <div style="display:flex;">
 
+                <?php $picture= auth()->user()->profile_picture;?>
                 <div>
-                    <div class="profil_picture"></div>
+                    <div class="profil_picture" style='background-image: url({{asset("images/profile_picture/$picture")}});'></div>
                     <a href="{{ route('profile.edit', auth()->id()) }}"><div class="button">éditer mon profil</div></a>
                 </div>
 

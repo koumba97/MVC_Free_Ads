@@ -50,10 +50,12 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
+                               
                             @endif
                         @else
+                        
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -86,5 +88,9 @@
             @yield('content')
         </main>
     </div>
+
+    <script src="https://kit.fontawesome.com/9b58f0fd79.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/jQuery.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
 </body>
 </html>

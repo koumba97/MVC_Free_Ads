@@ -1,4 +1,183 @@
 $grey: rgb(169, 169, 169);
+//////// HOME
+.home{
+    padding: 20px;
+
+    .carrousel{
+        height: 450px;
+        width: 80%;
+        margin: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('images/app/still_life.png');
+        background-position: 5px;
+
+    }
+
+
+
+    .add_annonce{
+        height: 35px;
+        width: max-content;
+        background-color: rgb(255, 232, 241);
+        position: relative;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        padding-top: 0px;
+        top: 90px;
+        cursor: pointer;
+    }
+    .annonces{
+        margin-top: 100px;
+        background-color: white;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+
+        a{
+            text-decoration: none;
+            color:  black;
+        }
+
+        .annonce{
+
+            background-color:rgb(231, 248, 255);
+            height: 300px;
+            width: 230px;
+            padding: 20px;
+            margin: 20px;
+
+            .photo{
+                background-color: white;
+                width:180px;
+                height: 180px;
+                margin: auto;  
+                background-size: cover;
+            }
+
+            p{
+                margin: 0px;
+            }
+
+            .nom{
+                font-weight: bolder;
+                font-size: 20px;
+            }
+            .prix{
+                float: right;
+            }
+       
+
+        }
+    }
+}
+
+
+/////// ADD ANNONCE
+
+.fond_add{
+    display: none;
+    z-index: 2;
+    background-color:rgba(0, 0, 0, 0.568);
+    position: fixed; 
+    bottom: 0px;
+    width: 100%;
+    height: 140%; 
+    overflow: auto;
+}
+
+.popup_add{
+    //display: flex;
+    display: none;
+    z-index: 5;
+    background-color:white;
+    position: fixed; 
+    left: 25%;
+    top: 15%;
+    width: 600px;
+    height: 440px; 
+    overflow: unset;
+    box-shadow: 10px 10px 0px rgb(60, 107, 143);
+    padding: 10px;
+   
+    flex-direction: column;
+
+    .title{
+        border: none;
+        border-bottom: solid 1px rgb(210, 210, 210);
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    textarea{
+        background-color:  rgb(244, 244, 244);
+        border: none;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"]{
+        font-size: 40px;
+    }
+
+    .top{
+
+        height: 50px;
+        border: none;
+        padding-right: 10px;
+        .popin-dismiss{
+           
+            font-size: 30px;
+            float: right;
+            cursor: pointer;
+            //width: 100%;
+        }
+    }
+
+    .pictures{
+        display: flex;
+        justify-content: space-between;
+        //width: 400px;
+        margin-bottom: 20px;
+        .picture{
+            height: 80px;
+            width: 80px;
+            background-color: rgb(235, 235, 235);
+            color: white;
+            margin: auto;
+            margin-right: 20px;
+            align-self: center;
+            text-align: center;
+            font-size: 30px;
+            i{
+
+                position: relative;
+                top: 15px;
+            }
+
+        }
+        
+        p{
+            //border: solid;
+            .price{
+                width: 50px;
+                float: right;
+                //border: solid black;
+            }
+        }
+    }
+
+    input[type="submit"]{
+        height: 30px;
+        align-self: flex-end;
+        border: none;
+        color: white;
+        background-color: rgb(151, 164, 132);
+    }
+}
+
+//////// PROFIL
 .profil{
     display: flex;
     justify-content: space-between;
@@ -10,11 +189,16 @@ $grey: rgb(169, 169, 169);
     .profil_info{
         width: 60%;
 
+
         .profil_picture{
             height: 200px;
-            background-color: whitesmoke;
+            //background-color: whitesmoke;
             width: 200px;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
+
+
 
         .info{
             padding-left: 20px;
@@ -57,4 +241,91 @@ $grey: rgb(169, 169, 169);
 
         }
     }
+}
+
+
+
+//////// PROFIL EDIT
+.profil{
+    display: flex;
+    justify-content: space-between;
+
+    .form_edit{
+        background-color: white;
+        padding: 10px;
+        margin: auto;
+        width: 300px;
+        box-shadow: 2px 2px 1px rgb(203, 203, 203);
+
+
+        .div_picture_content{
+            background: rgb(222, 222, 222);
+
+            .profil_picture_edit{
+                height: 200px;
+                background-color: whitesmoke;
+                width: 200px;
+                margin: auto;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
+        input{
+            float: right;
+
+        }
+    }
+}
+
+
+
+
+///// ANNONCE
+
+.annonce{
+
+    display: flex;
+
+    .gallery{
+        display: flex;
+        height: 420px;
+        margin-right: 20px;
+
+        .small_pictures{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-right: 20px;
+
+            .small_picture{
+                border: solid;
+                height: 100px;
+                width: 100px;
+            }
+        }
+
+        .show{
+            width: 420px;
+            height: 420px;
+            border: solid;
+        }
+
+    }
+
+    .info{
+       height: max-content;
+       align-self: flex-end;
+
+       .price{
+           float: right;
+           margin-bottom: 20px;
+       }
+
+       .description{
+          
+       }
+
+    }
+
 }

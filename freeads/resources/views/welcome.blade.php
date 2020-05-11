@@ -1,100 +1,66 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
+<div class="fond_add"></div>
+<section class="home">
+    <div class="carrousel"></div>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    @guest
+        @if (Route::has('register'))
+        
+        @endif
 
-            .full-height {
-                height: 100vh;
-            }
+        @else
+        <div class="add_annonce"><i class="fas fa-plus"></i> ajouter</div>
+    @endguest
+    <section class="annonces">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        @foreach ($annonces as $annonce)
 
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+            <?php $annonce_picture= $annonce->picture1 ;?>
+            
+                <div class="annonce">
+                    <div class="photo" style='background-image: url({{asset("images/annonce/$annonce_picture")}});'></div>
+                    <a href="{{ route('annonce.show', $annonce->id_annonce) }}">
+                        <div class="details_annonce">
+                            <p class="nom">{{ $annonce->title }}</p>
+                            <p>par {{ $annonce->name }}</p>
+                            <p class="prix">{{ $annonce->price }} €</p>
+                        </div>
+                    </a>
                 </div>
-            @endif
+           
+        @endforeach
+   
+    </section>
+</section>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+<form class="popup_add" method="POST" action="create_annonce" enctype="multipart/form-data">
+@csrf
+    <div class="top"><div class="popin-dismiss">&times;</div></div>
+    <input type="text" name="title" class="title" required="required" placeholder="nom de l'article"/>
+    
+    <textarea name="description" required="required"></textarea>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+    <div style="display:flex; justify-content:space-between;">
+    
+    <div class="pictures">
+       <label for="file1" class="picture file1"><i class="fas fa-camera"></i></label>
+       <label for="file2" class="picture file2"><i class="fas fa-camera"></i></label>
+       <label for="file3" class="picture file3"><i class="fas fa-camera"></i></label>
+       <label for="file4" class="picture file4"><i class="fas fa-camera"></i></label>
+
+       <p>PRIX <input class="price" name="price" required="required"/> €</p>
+   </div>
+
+   <input id="file1" style="display:none;" name="profil_file1" type="file"/>
+   <input id="file2" style="display:none;" name="profil_file2" type="file"/>
+   <input id="file3" style="display:none;" name="profil_file3" type="file"/>
+   <input id="file4" style="display:none;" name="profil_file4" type="file"/>
+
+    <input type="submit" value="poster"/>
+</div>
+
+</form>
+@endsection

@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'HomeController@index');
 
 Route::resource('user', 'ProfileController');
 Auth::routes(['verify' => true]);
@@ -24,23 +23,24 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-// Route::get('profileEdit', function () {
-//     return view('profile/profileEdit');
-// })->middleware('verified');
-
-
 Route::middleware ('auth', 'verified')->group (function () {
     Route::resource ('profile', 'ProfileController', [
         'only' => ['edit', 'update', 'destroy', 'show'],
         'parameters' => ['profile' => 'user']
     ]);
-
-
-    
-
 });
 
 Route::get("profile/{user}/show", 'ProfileController@show');
-//})->middleware('verified');
-//Route::get('profile/{user}/edit', 'ProfileController@edit');
-Route::post("profile/{user}/update", 'ProfileController@update');
+Route::post("profile/{user}/update_user", 'ProfileController@update');
+
+
+
+Route::middleware ('auth', 'verified')->group (function () {
+
+    Route::resource ('annonce', 'AnnoncesController', [
+        'only' => ['add', 'edit', 'update', 'destroy', 'show'],
+        
+    ]);
+});
+
+Route::post("create_annonce", 'AnnoncesController@create');
