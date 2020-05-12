@@ -36,8 +36,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <form class="search" action="search" method="get"><input type="search" name="search" placeholder="rechercher..." /> <input id="ok" type="submit" style="display:none;"/> <label for="ok"><i class="fas fa-search"></i></label></form>
+                        <div class="faux_select">recherche par type
+                            <div class="all_options">
+                                <div class="option">accessoires</div>
+                                <div class="option">vêtements</div>
+                                <div class="option">chaussures</div>
+                                <div class="option">beauté</div>
+                                <div class="option">contenant</div>
+                                <div class="option">meuble</div>
+                                <div class="option">bijoux</div>
+                                <div class="option">livres</div>
+                                <div class="option">jeux</div>
+                                <div class="option">électronique</div>
+                                <div class="option">autre</div>
+                            </div>
+                        </div>
                     </ul>
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -50,13 +66,13 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                               
                             @endif
                         @else
                         
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <?php $mini_picture= auth()->user()->profile_picture;?>
+                                <a id="navbarDropdown" class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <div class="mini_profil" style='background-image: url({{asset("images/profile_picture/$mini_picture")}});'></div><span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

@@ -3,7 +3,9 @@
 @section('content')
 <div class="fond_add"></div>
 <section class="home">
-    <div class="carrousel"></div>
+    <div class="carrousel">
+        <div>vente de particulier à particulier sans frais</div>
+    </div>
 
 
     @guest
@@ -29,6 +31,7 @@
                             <p class="prix">{{ $annonce->price }} €</p>
                         </div>
                     </a>
+                    
                 </div>
            
         @endforeach
@@ -41,6 +44,22 @@
     <div class="top"><div class="popin-dismiss">&times;</div></div>
     <input type="text" name="title" class="title" required="required" placeholder="nom de l'article"/>
     
+    <div style="position:relative; bottom:60px; right:120px;">
+        <select name="type">
+            <option value="accessoire">accessoires</option>
+            <option value="vetement">vêtements</option>
+            <option value="chaussures">chaussures</option>
+            <option value="beaute">beauté</option>
+            <option value="contenant">contenant</option>
+            <option value="meuble">meubles</option>
+            <option value="bijoux">bijoux</option>
+            <option value="livre">livres</option>
+            <option value="vetement">jeux</option>
+            <option value="electronique">életroniques</option>
+            <option value="autre">autre</option>
+        </select>
+    </div>
+
     <textarea name="description" required="required"></textarea>
 
     <div style="display:flex; justify-content:space-between;">

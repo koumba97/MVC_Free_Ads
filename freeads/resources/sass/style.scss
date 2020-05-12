@@ -1,17 +1,102 @@
 $grey: rgb(169, 169, 169);
+//////// NAV
+.search{
+    border: solid rgb(218, 218, 218) 1px;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    input[type="search"]{
+        border: none;
+        position: relative;
+        background-color: transparent;
+        top: 3px;
+  
+    }
+
+    input[type="submit"]{
+        border: none;
+        background-color: transparent;
+       
+    }
+
+    i{
+        position: relative;
+        top: 3px;
+    }
+
+
+}
+
+.faux_select{
+    //width: 100px;
+    color: rgb(186, 186, 186);
+    height: max-content;
+    border: solid 1px rgb(225, 225, 225);
+    font-size: 12px;
+    padding-left: 10px;
+    padding-bottom: 2px;
+    padding-right: 10px;
+    position: relative;
+    top: 5px;
+    cursor: default;
+
+    .all_options{
+        display: none;
+        position: absolute;
+        left: -1px;
+        border: solid 1px rgb(225, 225, 225);
+        border-top: none;
+        background-color: white;
+        width: 123px;
+       
+        z-index: 4;
+
+        .option{
+            padding-left: 10px;
+            padding-bottom: 2px;
+            padding-right: 10px;
+            transition-duration: 1s;
+            &:hover{
+                background-color: rgb(176, 159, 237);
+                color: white;
+            }
+
+        }
+    }
+}
+
+.mini_profil{
+    //border: solid;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    background-size: cover;
+}
 //////// HOME
 .home{
-    padding: 20px;
+    //padding: 20px;
 
     .carrousel{
-        height: 450px;
-        width: 80%;
+        height: 150px;
+        //width: 80%;
         margin: auto;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url('images/app/still_life.png');
-        background-position: 5px;
-
+        background-image: url('https://wallpaperaccess.com/full/1710073.jpg');
+        div{
+            background-color: white;
+            font-size: 20px;
+            font-family: Comfortaa-Bold;
+            padding: 0px;
+            margin: auto;
+            text-align: center;
+            width: max-content;
+            position: relative;
+            top: 50px;
+        }
     }
 
 
@@ -19,19 +104,22 @@ $grey: rgb(169, 169, 169);
     .add_annonce{
         height: 35px;
         width: max-content;
-        background-color: rgb(255, 232, 241);
+        border: solid rgb(215, 215, 215) 1px;
+        background-color: white;
         position: relative;
-        color: white;
+        color: rgb(215, 215, 215);
         font-size: 20px;
         padding: 10px;
         padding-top: 0px;
         top: 90px;
+        margin-left: 20px;
         cursor: pointer;
     }
     .annonces{
+        padding: 20px;
         margin-top: 100px;
-        background-color: white;
-        padding: 10px;
+        //background-color: white;
+        //padding: 10px;
         display: flex;
         flex-wrap: wrap;
 
@@ -42,11 +130,13 @@ $grey: rgb(169, 169, 169);
 
         .annonce{
 
-            background-color:rgb(231, 248, 255);
+            border: solid rgb(215, 215, 215) 1px;
+            background-color: white;
             height: 300px;
             width: 230px;
             padding: 20px;
-            margin: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
 
             .photo{
                 background-color: white;
@@ -100,9 +190,20 @@ $grey: rgb(169, 169, 169);
     overflow: unset;
     box-shadow: 10px 10px 0px rgb(60, 107, 143);
     padding: 10px;
-   
     flex-direction: column;
 
+    select{
+        width: max-content;
+        height: 40px;
+        float: right;
+        //margin-bottom: 20px;
+        border-radius: 0px;
+        border: none;
+
+        option{
+            height: 40px;
+        }
+    }
     .title{
         border: none;
         border-bottom: solid 1px rgb(210, 210, 210);
@@ -179,7 +280,7 @@ $grey: rgb(169, 169, 169);
 
 //////// PROFIL
 .profil{
-    display: flex;
+    //display: flex;
     justify-content: space-between;
 
     a{
@@ -196,50 +297,118 @@ $grey: rgb(169, 169, 169);
             width: 200px;
             background-repeat: no-repeat;
             background-size: cover;
+            border-radius: 100px;
+
         }
 
 
 
         .info{
-            padding-left: 20px;
-            padding-top: 40px;
+            //padding-top: 40px;
             font-size: 10px;
             color:$grey;
+
+            .name{
+                font-size: 30px;
+            }
         }
 
         .button{
             height: max-content;
-            background-color: rgb(255, 209, 216);
-            color: white;
+            background-color: white;
+            color: rgb(213, 213, 213);
             padding: 5px;
             width: max-content;
-            border-radius: 5px;
+            border:solid 1px rgb(213, 213, 213);
             margin-top: 10px;
         }
 
-        .dernieres_annonces{
-            margin-top: 40px;
-            background-color: rgb(229, 239, 240);
-            height: 200px;
-        }
     }
 
     .profil_annonces{
 
-        border-radius: 5px;
+        border: solid 1px rgb(223, 223, 223);
         height: 450px;
-        width: 35%;
-
-        h1{
-            font-size: 20px;
-        }
+        width: 100%;
+        background-color: white;
 
         .mes_annonces{
-            background-color: rgb(250, 245, 237);
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            margin: auto;
+            border-bottom: solid 1px rgb(223, 223, 223);
+            height: 250px;
+            padding-top: 10px;
 
+            h1{
+                font-family: Comfortaa-Bold;
+                font-size: 20px;
+                color: rgb(223, 223, 223);
+            }
+
+            a{
+                color: rgb(193, 193, 193);
+            }
+            .annonces{
+                display: flex;
+                flex-wrap: wrap;
+                overflow: scroll;
+                height: 200px;
+
+                .annonce{
+                    height: 150px;
+                    width: 120px;
+                    border: solid 1px rgb(223, 223, 223);
+                    padding: 5px;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+
+                    .photo{
+                        background-color: rgb(223, 223, 223);;
+                        background-size: cover;
+                        height: 90px;
+                        width: 90px;
+                        margin: auto;
+                        margin-top: 5px;
+                    }
+
+                    p{
+                        margin: 0px;
+                    }
+                            .nom{
+                                padding-left: 10px;
+                                font-size: 12px;
+                            }
+
+                            .prix{
+                                float: right;
+                                font-size: 10px;
+                                padding-right: 5px;
+                                color: rgb(201, 201, 201);
+          
+                            }
+
+                            .edit{
+                                font-size: 10px;
+                                padding-left: 8px;
+                            }
+                }
+            }
         }
+
+        .dernieres_annonces{
+            width: 90%;
+            margin: auto;
+            //border-bottom: solid 1px rgb(223, 223, 223);
+            height: 180px;
+            padding-top: 10px;
+
+            h1{
+                font-family: Comfortaa-Bold;
+                font-size: 20px;
+                color: rgb(223, 223, 223);
+            }
+        }
+
     }
 }
 
@@ -283,7 +452,9 @@ $grey: rgb(169, 169, 169);
 
 ///// ANNONCE
 
-.annonce{
+
+
+.annonce_show{
 
     display: flex;
 
@@ -299,16 +470,18 @@ $grey: rgb(169, 169, 169);
             margin-right: 20px;
 
             .small_picture{
-                border: solid;
+                //border: solid white;
                 height: 100px;
                 width: 100px;
+                background-size: cover;
             }
         }
 
         .show{
             width: 420px;
             height: 420px;
-            border: solid;
+            border: solid white;
+            background-size: cover;
         }
 
     }
@@ -322,10 +495,94 @@ $grey: rgb(169, 169, 169);
            margin-bottom: 20px;
        }
 
+       p{
+           font-size: 10px;
+       }
+
        .description{
           
        }
 
     }
 
+}
+
+
+
+
+/////// EDIT ANNONCE
+
+.title_edit{
+    background-color: transparent;
+    font-size: 50px;
+    width: 300px;
+    border: none;
+}
+
+.price_edit{
+    //float: right;
+    background-color: transparent;
+    width: 50px;
+    border: none;
+    font-size: 30px;
+    
+}
+
+.euro{
+    display: inline-block;
+}
+
+.description_edit{
+    width: 350px;
+    height: 200px;
+    border: none;
+    position: relative;
+    bottom: 20px;
+    background-color: transparent;
+}
+
+.boutons{
+    display: flex;
+    position: relative;
+    bottom: 20px;
+
+    a{
+        text-decoration: none;
+    }
+
+    .bouton_edit{
+        border: solid 1px rgb(223, 223, 223);
+        color: rgb(177, 177, 177);
+        text-align: center;
+        background-color: white;
+        width: 100px;
+        height: 30px;
+        padding: 2px;
+        cursor: default;
+    }
+
+    .bouton_delete{
+        border: solid 1px rgb(223, 223, 223);
+        color:white;
+        text-align: center;
+        background-color: rgb(232, 145, 197);
+        width: 100px;
+        height: 30px;
+        padding: 2px;
+        cursor: default;
+        margin-right: 20px;
+    }
+}
+
+
+.nav_result{
+    background-color: white;
+    height: 60px;
+    border-bottom: solid 1px rgb(223, 223, 223);
+
+    p{
+        padding-top: 15px;
+        margin: auto;
+        width: max-content;
+    }
 }

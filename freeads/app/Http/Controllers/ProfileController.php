@@ -13,8 +13,19 @@ class ProfileController extends Controller
     public function show(User $user)
     {
         $this->authorize ('manage', $user);
-        return view('profile/profile');
-        //return view ('profile.edit', compact ('user'));
+
+        $id_user= auth()->id();
+        $mes_annonces= new AnnoncesController();
+        $mes_annonces->mesAnnonces($id_user);
+
+
+        $mes_annonces = \DB::table('annonces')
+        ->where('id_vendor', $id_user)
+        ->orderBy('id_annonce', 'desc')
+        ->join('users', 'users.id', '=', 'annonces.id_vendor')
+        ->get();
+        return view('profile.profile', ['mes_annonces' => $mes_annonces]);
+        
     }
 
     public function edit(User $user)
@@ -29,19 +40,18 @@ class ProfileController extends Controller
     {
         $id = auth()->id();
         $name = $request->input('name');
-        $email = $request->input('email');
+        //$email = $request->input('email');
         $picture_name = $request->input('picture_name');
 
         //$request->file('profil_file');
-        print_r($_FILES);
+        //print_r($_FILES);
        
         foreach ($_FILES as $image){
             $imageName=$image['name'];
             move_uploaded_file($image["tmp_name"],"images/profile_picture/".$image['name']);
         }
-
         $update= new \App\ProfileModel;
-        $update->updateProfile($id, $name, $email, $picture_name);
+        $update->updateProfile($id, $name, $picture_name);
 
         
     }

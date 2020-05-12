@@ -1,15 +1,94 @@
-.home {
-  padding: 20px;
+.search {
+  border: solid #dadada 1px;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.search input[type=search] {
+  border: none;
+  position: relative;
+  background-color: transparent;
+  top: 3px;
+}
+
+.search input[type=submit] {
+  border: none;
+  background-color: transparent;
+}
+
+.search i {
+  position: relative;
+  top: 3px;
+}
+
+.faux_select {
+  color: #bababa;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border: solid 1px #e1e1e1;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-bottom: 2px;
+  padding-right: 10px;
+  position: relative;
+  top: 5px;
+  cursor: default;
+}
+
+.faux_select .all_options {
+  display: none;
+  position: absolute;
+  left: -1px;
+  border: solid 1px #e1e1e1;
+  border-top: none;
+  background-color: white;
+  width: 123px;
+  z-index: 4;
+}
+
+.faux_select .all_options .option {
+  padding-left: 10px;
+  padding-bottom: 2px;
+  padding-right: 10px;
+  transition-duration: 1s;
+}
+
+.faux_select .all_options .option:hover {
+  background-color: #b09fed;
+  color: white;
+}
+
+.mini_profil {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  background-size: cover;
 }
 
 .home .carrousel {
-  height: 450px;
-  width: 80%;
+  height: 150px;
   margin: auto;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(/images/still_life.png?c593b2f8a0cf819abce37f2df1839fba);
-  background-position: 5px;
+  background-image: url("https://wallpaperaccess.com/full/1710073.jpg");
+}
+
+.home .carrousel div {
+  background-color: white;
+  font-size: 20px;
+  font-family: Comfortaa-Bold;
+  padding: 0px;
+  margin: auto;
+  text-align: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: relative;
+  top: 50px;
 }
 
 .home .add_annonce {
@@ -17,20 +96,21 @@
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  background-color: #ffe8f1;
+  border: solid #d7d7d7 1px;
+  background-color: white;
   position: relative;
-  color: white;
+  color: #d7d7d7;
   font-size: 20px;
   padding: 10px;
   padding-top: 0px;
   top: 90px;
+  margin-left: 20px;
   cursor: pointer;
 }
 
 .home .annonces {
+  padding: 20px;
   margin-top: 100px;
-  background-color: white;
-  padding: 10px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -41,11 +121,13 @@
 }
 
 .home .annonces .annonce {
-  background-color: #e7f8ff;
+  border: solid #d7d7d7 1px;
+  background-color: white;
   height: 300px;
   width: 230px;
   padding: 20px;
-  margin: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .home .annonces .annonce .photo {
@@ -93,6 +175,20 @@
   box-shadow: 10px 10px 0px #3c6b8f;
   padding: 10px;
   flex-direction: column;
+}
+
+.popup_add select {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 40px;
+  float: right;
+  border-radius: 0px;
+  border: none;
+}
+
+.popup_add select option {
+  height: 40px;
 }
 
 .popup_add .title {
@@ -162,7 +258,6 @@
 }
 
 .profil {
-  display: flex;
   justify-content: space-between;
 }
 
@@ -179,49 +274,114 @@
   width: 200px;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 100px;
 }
 
 .profil .profil_info .info {
-  padding-left: 20px;
-  padding-top: 40px;
   font-size: 10px;
   color: darkgray;
+}
+
+.profil .profil_info .info .name {
+  font-size: 30px;
 }
 
 .profil .profil_info .button {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  background-color: #ffd1d8;
-  color: white;
+  background-color: white;
+  color: #d5d5d5;
   padding: 5px;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  border-radius: 5px;
+  border: solid 1px #d5d5d5;
   margin-top: 10px;
 }
 
-.profil .profil_info .dernieres_annonces {
-  margin-top: 40px;
-  background-color: #e5eff0;
-  height: 200px;
-}
-
 .profil .profil_annonces {
-  border-radius: 5px;
+  border: solid 1px #dfdfdf;
   height: 450px;
-  width: 35%;
-}
-
-.profil .profil_annonces h1 {
-  font-size: 20px;
+  width: 100%;
+  background-color: white;
 }
 
 .profil .profil_annonces .mes_annonces {
-  background-color: #faf5ed;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  margin: auto;
+  border-bottom: solid 1px #dfdfdf;
+  height: 250px;
+  padding-top: 10px;
+}
+
+.profil .profil_annonces .mes_annonces h1 {
+  font-family: Comfortaa-Bold;
+  font-size: 20px;
+  color: #dfdfdf;
+}
+
+.profil .profil_annonces .mes_annonces a {
+  color: #c1c1c1;
+}
+
+.profil .profil_annonces .mes_annonces .annonces {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+  height: 200px;
+}
+
+.profil .profil_annonces .mes_annonces .annonces .annonce {
+  height: 150px;
+  width: 120px;
+  border: solid 1px #dfdfdf;
+  padding: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.profil .profil_annonces .mes_annonces .annonces .annonce .photo {
+  background-color: #dfdfdf;
+  background-size: cover;
+  height: 90px;
+  width: 90px;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.profil .profil_annonces .mes_annonces .annonces .annonce p {
+  margin: 0px;
+}
+
+.profil .profil_annonces .mes_annonces .annonces .annonce .nom {
+  padding-left: 10px;
+  font-size: 12px;
+}
+
+.profil .profil_annonces .mes_annonces .annonces .annonce .prix {
+  float: right;
+  font-size: 10px;
+  padding-right: 5px;
+  color: #c9c9c9;
+}
+
+.profil .profil_annonces .mes_annonces .annonces .annonce .edit {
+  font-size: 10px;
+  padding-left: 8px;
+}
+
+.profil .profil_annonces .dernieres_annonces {
+  width: 90%;
+  margin: auto;
+  height: 180px;
+  padding-top: 10px;
+}
+
+.profil .profil_annonces .dernieres_annonces h1 {
+  font-family: Comfortaa-Bold;
+  font-size: 20px;
+  color: #dfdfdf;
 }
 
 .profil {
@@ -254,44 +414,123 @@
   float: right;
 }
 
-.annonce {
+.annonce_show {
   display: flex;
 }
 
-.annonce .gallery {
+.annonce_show .gallery {
   display: flex;
   height: 420px;
   margin-right: 20px;
 }
 
-.annonce .gallery .small_pictures {
+.annonce_show .gallery .small_pictures {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-right: 20px;
 }
 
-.annonce .gallery .small_pictures .small_picture {
-  border: solid;
+.annonce_show .gallery .small_pictures .small_picture {
   height: 100px;
   width: 100px;
+  background-size: cover;
 }
 
-.annonce .gallery .show {
+.annonce_show .gallery .show {
   width: 420px;
   height: 420px;
-  border: solid;
+  border: solid white;
+  background-size: cover;
 }
 
-.annonce .info {
+.annonce_show .info {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   align-self: flex-end;
 }
 
-.annonce .info .price {
+.annonce_show .info .price {
   float: right;
   margin-bottom: 20px;
+}
+
+.annonce_show .info p {
+  font-size: 10px;
+}
+
+.title_edit {
+  background-color: transparent;
+  font-size: 50px;
+  width: 300px;
+  border: none;
+}
+
+.price_edit {
+  background-color: transparent;
+  width: 50px;
+  border: none;
+  font-size: 30px;
+}
+
+.euro {
+  display: inline-block;
+}
+
+.description_edit {
+  width: 350px;
+  height: 200px;
+  border: none;
+  position: relative;
+  bottom: 20px;
+  background-color: transparent;
+}
+
+.boutons {
+  display: flex;
+  position: relative;
+  bottom: 20px;
+}
+
+.boutons a {
+  text-decoration: none;
+}
+
+.boutons .bouton_edit {
+  border: solid 1px #dfdfdf;
+  color: #b1b1b1;
+  text-align: center;
+  background-color: white;
+  width: 100px;
+  height: 30px;
+  padding: 2px;
+  cursor: default;
+}
+
+.boutons .bouton_delete {
+  border: solid 1px #dfdfdf;
+  color: white;
+  text-align: center;
+  background-color: #e891c5;
+  width: 100px;
+  height: 30px;
+  padding: 2px;
+  cursor: default;
+  margin-right: 20px;
+}
+
+.nav_result {
+  background-color: white;
+  height: 60px;
+  border-bottom: solid 1px #dfdfdf;
+}
+
+.nav_result p {
+  padding-top: 15px;
+  margin: auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 

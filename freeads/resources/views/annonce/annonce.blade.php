@@ -1,29 +1,45 @@
 @extends('layouts.app')
 @section('content')
+
+
+
+
 <div class="container">
-   <section class="annonce">
-       <div class="gallery">
-           <div class="small_pictures">
-               <div class="small_picture"></div>
-               <div class="small_picture"></div>
-               <div class="small_picture"></div>
-               <div class="small_picture"></div>
-           </div>
+   <section class="annonce_show">
+        @foreach ($annonce as $data)
 
-           <div class="show"></div>
-       </div>
+            <?php
+                $annonce_picture1 = $data->picture1 ;
+                $annonce_picture2 = $data->picture2 ;
+                $annonce_picture3 = $data->picture3 ;
+                $annonce_picture4 = $data->picture4 ;
+            ?>
+            <div class="gallery">
+                <div class="small_pictures">
+                    <div class="small_picture pic1" onclick="changePicture('<?php echo $annonce_picture1; ?>')" style='background-image: url({{asset("images/annonce/$annonce_picture1")}});'></div>
+                    <div class="small_picture pic2" onclick="changePicture('<?php echo $annonce_picture2; ?>')" style='background-image: url({{asset("images/annonce/$annonce_picture2")}});'></div>
+                    <div class="small_picture pic3" onclick="changePicture('<?php echo $annonce_picture3; ?>')" style='background-image: url({{asset("images/annonce/$annonce_picture3")}});'></div>
+                    <div class="small_picture pic4" onclick="changePicture('<?php echo $annonce_picture4; ?>')" style='background-image: url({{asset("images/annonce/$annonce_picture4")}});'></div>
+                </div>
 
-       <div class="info">
-
-           <div style="height:100px;">
-                <h1>Nom produit</h1>
-                <h4 class="price">10€</h4>
+                <div class="show" style='background-image: url({{asset("images/annonce/$annonce_picture1")}});'></div>
             </div>
 
-           <div class="description">
-                Utque proeliorum periti rectores primo catervas densas opponunt et fortes, deinde leves armaturas, post iaculatores ultimasque subsidiales acies, si fors adegerit, iuvaturas, ita praepositis urbanae familiae suspensae digerentibus sollicite, quos insignes faciunt virgae dexteris aptatae velut tessera data castrensi iuxta vehiculi frontem omne textrinum incedit: huic atratum coquinae iungitur ministerium, dein totum promiscue servitium cum otiosis plebeiis de vicinitate coniunctis: postrema multitudo spadonum a senibus in pueros desinens.
+            <div class="info">
+
+                <div style="height:100px;">
+                    <h1>{{ $data->title }}</h1>
+                    <h4 class="price">{{ $data->price }} €</h4>
+                    <p>publié le {{ $data->created_at }}<br>
+                        par {{ $data->name }}
+                    </p>
+                </div>
+
+                <div class="description">
+                    {{ $data->description }}
+                </div>
             </div>
-       </div>
+       @endforeach
     </section>
 </div>
 @endsection

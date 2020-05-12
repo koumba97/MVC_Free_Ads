@@ -1,17 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Illuminate\Http\Request;
 
 
 Route::get('/', 'HomeController@index');
@@ -30,17 +20,24 @@ Route::middleware ('auth', 'verified')->group (function () {
     ]);
 });
 
+
 Route::get("profile/{user}/show", 'ProfileController@show');
 Route::post("profile/{user}/update_user", 'ProfileController@update');
-
 
 
 Route::middleware ('auth', 'verified')->group (function () {
 
     Route::resource ('annonce', 'AnnoncesController', [
         'only' => ['add', 'edit', 'update', 'destroy', 'show'],
+        'parameters' => ['annonce' => 'id']
         
     ]);
 });
 
 Route::post("create_annonce", 'AnnoncesController@create');
+
+Route::get("/profile/annonce/edit/{id_annonce}", 'AnnoncesController@edit');
+Route::post("/profile/annonce/update/{id_annonce}", 'AnnoncesController@update');
+Route::get("/profile/annonce/delete/{id_annonce}", 'AnnoncesController@delete');
+
+Route::get("search", ['as' => 'search', 'uses'=> 'AnnoncesController@search']);

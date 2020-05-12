@@ -17,7 +17,7 @@
 
         <p>nom : <input type="text" name="name"  value="{{ Auth::user()->name }}" /></p>
         <br>
-        <p>e-mail : <input type="email" name="email"  value="{{ Auth::user()->email }}" /></p>
+        <!-- <p>e-mail : <input type="email" name="email"  value="{{ Auth::user()->email }}" /></p> -->
         <br>
         <p>mot de passe : <input type="password" name="password" /></p>
         <br>

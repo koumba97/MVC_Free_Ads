@@ -103,7 +103,35 @@ $(document).ready(function(){
         $('.fond_add').fadeOut(500);
     });
 
+
+    count=0
+    
+    $('.faux_select').click(function(e){
+        if(count==0){
+            $('.all_options').slideDown();
+            count=1;
+            return;
+        }
+
+        if(count=1){
+            $('.all_options').slideUp();
+            count=0;
+            return;
+        }
+      
+    });
+
+  
+
 });
 
 
+    // ANNONCE PICTURES
+    function changePicture(picture){
+        $('.show').css('background-image', 'url("../images/annonce/'+ picture +' ")');
+    }
 
+    function changePictureEdit(picture){
+        //alert(picture);
+        $('.show').css('background-image', 'url("../images/annonce/'+ picture +' ")');
+    }
