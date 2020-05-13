@@ -39,17 +39,17 @@
                         <form class="search" action="search" method="get"><input type="search" name="search" placeholder="rechercher..." /> <input id="ok" type="submit" style="display:none;"/> <label for="ok"><i class="fas fa-search"></i></label></form>
                         <div class="faux_select">recherche par type
                             <div class="all_options">
-                                <div class="option">accessoires</div>
-                                <div class="option">vêtements</div>
-                                <div class="option">chaussures</div>
-                                <div class="option">beauté</div>
-                                <div class="option">contenant</div>
-                                <div class="option">meuble</div>
-                                <div class="option">bijoux</div>
-                                <div class="option">livres</div>
-                                <div class="option">jeux</div>
-                                <div class="option">électronique</div>
-                                <div class="option">autre</div>
+                                <a href="/type/accesoire"><div class="option">accessoires</div></a>
+                                <a href="/type/vetement"><div class="option">vêtements</div></a>
+                                <a href="/type/chaussures"><div class="option">chaussures</div></a>
+                                <a href="/type/beaute"><div class="option">beauté</div></a>
+                                <a href="/type/contenant"><div class="option">contenant</div></a>
+                                <a href="/type/meuble"><div class="option">meuble</div></a>
+                                <a href="/type/bijoux"><div class="option">bijoux</div></a>
+                                <a href="/type/livre"><div class="option">livres</div></a>
+                                <a href="/type/jeux"><div class="option">jeux</div></a>
+                                <a href="/type/electronique"><div class="option">électronique</div></a>
+                                <a href="/type/autre"><div class="option">autre</div></a>
                             </div>
                         </div>
                     </ul>

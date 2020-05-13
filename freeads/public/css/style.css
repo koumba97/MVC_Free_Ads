@@ -50,6 +50,11 @@
   z-index: 4;
 }
 
+.faux_select .all_options a {
+  text-decoration: none;
+  color: #bababa;
+}
+
 .faux_select .all_options .option {
   padding-left: 10px;
   padding-bottom: 2px;
@@ -74,7 +79,7 @@
   margin: auto;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("https://wallpaperaccess.com/full/1710073.jpg");
+  background-image: url("https://cecilialeroux.com/wp-content/uploads/2019/10/Fresque_anim-couleurnuit.gif");
 }
 
 .home .carrousel div {
@@ -460,6 +465,24 @@
   font-size: 10px;
 }
 
+.annonce_show .info .contact {
+  height: 40px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: white;
+  border: solid 1px #dfdfdf;
+  padding-left: 10px;
+  color: #bfbfbf;
+  padding-top: 8px;
+  padding-right: 10px;
+  margin-top: 20px;
+}
+
+.annonce_show .info a {
+  text-decoration: none;
+}
+
 .title_edit {
   background-color: transparent;
   font-size: 50px;
@@ -532,5 +555,96 @@
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.message {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.message .message_window {
+  border: solid 1px #dfdfdf;
+  height: 450px;
+  width: 400px;
+  background-color: white;
+}
+
+.message form {
+  border: solid 1px #dfdfdf;
+  border-radius: 20px;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.message form input[type=text] {
+  width: 85%;
+  position: relative;
+  border: none;
+  top: 2px;
+  left: 10px;
+}
+
+.message form i {
+  position: relative;
+  left: 20px;
+  top: 3px;
+}
+
+.message form input[type=submit] {
+  width: 8%;
+}
+
+.message .receiver_info {
+  background-color: whitesmoke;
+  width: 200px;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.message .receiver_info h5 {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.message .receiver_info .profile_picture {
+  background-color: white;
+  border-radius: 100px;
+  border: solid white;
+  height: 130px;
+  width: 130px;
+  background-size: cover;
+}
+
+.message .receiver_info .name_receiver {
+  font-size: 20px;
+  margin: 0px;
+  color: #bdbdbd;
+}
+
+.message .receiver_info .annonces {
+  margin: 0px;
+  height: 300px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.message .receiver_info .all_annonces {
+  background-color: white;
+  padding-top: 20px;
+  height: 90%;
+  width: 150px;
+  overflow: scroll;
+}
+
+.message .receiver_info .all_annonces .annonce {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 20px;
+  background-size: cover;
 }
 

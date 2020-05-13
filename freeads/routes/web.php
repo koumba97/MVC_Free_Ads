@@ -41,3 +41,13 @@ Route::post("/profile/annonce/update/{id_annonce}", 'AnnoncesController@update')
 Route::get("/profile/annonce/delete/{id_annonce}", 'AnnoncesController@delete');
 
 Route::get("search", ['as' => 'search', 'uses'=> 'AnnoncesController@search']);
+Route::get("/type/{type}", 'AnnoncesController@type');
+
+
+
+Route::middleware ('auth', 'verified')->group (function () {
+    Route::get("/messagerie/{id_recept}", 'MessageController@show');
+
+    Route::get('message', 'MessageController@fetchMessages');
+    Route::post('message', 'MessageController@sendMessage');
+});

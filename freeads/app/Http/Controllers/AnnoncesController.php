@@ -119,6 +119,18 @@ class AnnoncesController extends Controller
         return view('annonce.search', ['search_annonces' => $search_annonces]);
     }
 
+    public function type(Request $request, $type)
+    {
+        //$search = $request->search;
+        $type_annonces = \DB::table('annonces')
+        ->where('type', $type)
+        ->orderBy('id_annonce', 'desc')
+        ->join('users', 'users.id', '=', 'annonces.id_vendor')
+        ->get();
+        ///return $search_annonces;
+        return view('annonce.type', ['type_annonces' => $type_annonces], ['type' => $type]);
+    }
+
     
     public function delete($id_annonce)
     {

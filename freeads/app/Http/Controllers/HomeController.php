@@ -33,6 +33,6 @@ class HomeController extends Controller
                     ->join('users', 'users.id', '=', 'annonces.id_vendor')
                     ->get();
         return view('welcome', ['annonces' => $annonces]);
-        return view('welcome');
+        
     }
 }

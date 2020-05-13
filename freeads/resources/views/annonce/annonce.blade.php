@@ -38,6 +38,7 @@
                 <div class="description">
                     {{ $data->description }}
                 </div>
+                <a href="/messagerie/{{ $data->id }}"><div class="contact">contacter le vendeur <i class="far fa-envelope"></i></div></a>
             </div>
        @endforeach
     </section>

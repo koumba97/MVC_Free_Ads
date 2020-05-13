@@ -54,7 +54,7 @@
             <option value="meuble">meubles</option>
             <option value="bijoux">bijoux</option>
             <option value="livre">livres</option>
-            <option value="vetement">jeux</option>
+            <option value="jeux">jeux</option>
             <option value="electronique">életroniques</option>
             <option value="autre">autre</option>
         </select>
